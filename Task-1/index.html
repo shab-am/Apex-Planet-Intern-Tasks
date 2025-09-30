@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Webpage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.3rem;
+      color: #2c3e50;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      text-align: center;
+    }
+    main h3 {
+      color: #8e44ad;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    main p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .highlight {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+    .note {
+      background: #f1f8ff;
+      padding: 0.8rem;
+      border-left: 4px solid #3498db;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    .image-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .image-container img {
+      width: 70%;
+      max-width: 500px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .links {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .links a {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      background: #3498db;
+      color: #fff;
+      border-radius: 2rem;
+      transition: background 0.3s;
+    }
+    .links a:hover {
+      background: #1d6fa5;
+    }
+    .btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    button {
+      padding: 0.8rem 1.8rem;
+      background: #27ae60;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background: #1e8449;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255,255,255,0.2);
+      margin-top: 2rem;
+      color: #2c3e50;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hey there, <span class="highlight">welcome 👋</span></h1>
+    <p>This is my <b>very first webpage</b> — built with a mix of <span style="color:#16a085;">curiosity</span> and <span style="color:#d35400;">creativity</span>.</p>
+  </header>
+  <main>
+    <h2>A Little About This Page</h2>
+    <p>
+      I wanted to create a space that feels <b>simple</b> yet <span class="highlight">alive</span>. 
+      This page is not just plain text and boxes — 
+      it’s a small experiment to show how <span style="color:#2980b9;">HTML</span> builds the <u>structure</u>, 
+      <span style="color:#8e44ad;">CSS</span> adds style and personality, 
+      and <span style="color:#27ae60;">JavaScript</span> brings everything to life with a touch of interactivity.
+    </p>
+    <h3>Why Does This Matter?</h3>
+    <p>
+      Think of it like decorating a new room: the <b>walls</b> are the structure, 
+      the <i>paint and furniture</i> make it beautiful, 
+      and the <span class="highlight">lights & music</span> make it feel welcoming. 
+      That’s exactly what’s happening here with code.
+    </p>
+    <div class="note">
+      💡 Fun fact: Once you learn the basics, you’ll start noticing websites differently — 
+      like seeing the “blueprint” behind the design.
+    </div>
+    <div class="image-container">
+      <img src="https://plus.unsplash.com/premium_photo-1719943510748-4b4354fbcf56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="Nature and Technology">
+    </div>
+    <h3>Want to Explore More?</h3>
+    <p>
+      Along the way, I’ve added a few links in case you’d like to explore web development yourself. 
+      Trust me, once you start tinkering, it’s <b>hard to stop!</b>
+    </p>
+    <div class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Explore HTML</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Play with CSS</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Try JavaScript</a>
+    </div>
+    <p style="text-align:center; font-size:1.1rem;">
+      And because every page feels incomplete without some action — 
+      <span class="highlight">go ahead</span>, press the button below 👇
+    </p>
+    <div class="btn-container">
+      <button onclick="showMessage()">Click Me</button>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Built with <span style="color:#e74c3c;">passion</span>, ☕ coffee, and a bit of <b>code magic ✨</b>
+  </footer>
+  <script>
+    function showMessage() {
+      alert("Thanks for clicking! 🚀 You just made the webpage respond to you.");
+    }
+  </script>
+</body>
+</html>

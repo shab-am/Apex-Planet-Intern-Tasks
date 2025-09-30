@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Intermediate Web Project</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(120deg, #fccb90, #d57eeb);
+    color: #353535;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  header {
+    background: rgba(255,255,255,0.95);
+    padding: 32px 0 16px 0;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  }
+  h1 {
+    font-size: 2.7rem;
+    color: #6247aa;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    background: linear-gradient(90deg, #d57eeb 30%, #fccb90 100%);
+    padding: 12px 0;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 0 0 24px 24px;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  nav a.active, nav a:hover {
+    background: rgba(255,255,255,0.23);
+  }
+  .container {
+    padding: 40px 6vw;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 9px 26px rgba(0,0,0,0.07);
+    padding: 30px 26px;
+    margin-bottom: 10px;
+    display: none; /* hidden by default */
+  }
+  .section.active {
+    display: block; /* only active section shows */
+  }
+  .section h2 {
+    color: #d57eeb;
+    font-size: 2rem;
+    margin-bottom: 14px;
+  }
+  /* Contact Form */
+  .contact-form label {
+    display: block;
+    font-weight: 500;
+    margin-top: 12px;
+    margin-bottom: 2px;
+    color: #6247aa;
+  }
+  .contact-form input, .contact-form textarea {
+    width: 98%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border: 1.5px solid #d57eeb;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #faf2fe;
+    color: #353535;
+    transition: border-color 0.2s;
+  }
+  .contact-form input:focus, .contact-form textarea:focus {
+    border-color: #6247aa;
+    outline: none;
+  }
+  .contact-form button {
+    background-color: #6247aa;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .contact-form button:hover {
+    background: #d57eeb;
+  }
+  .error {
+    color: #ff5858;
+    font-size: 0.98rem;
+    margin-bottom: 6px;
+    margin-top: -6px;
+  }
+  /* To-Do List */
+  .todo-container {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .todo-title {
+    color: #6247aa;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+  .todo-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .todo-form input {
+    flex: 1;
+    border: 1.5px solid #d57eeb;
+    border-radius: 7px;
+    padding: 11px 9px;
+    font-size: 1.05rem;
+    background: #faf2fe;
+  }
+  .todo-form button {
+    padding: 11px 24px;
+    background: #6247aa;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .todo-form button:hover {
+    background: #d57eeb;
+  }
+  .todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .todo-list li {
+    padding: 12px 9px;
+    margin-bottom: 9px;
+    background: #faf2fe;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(212,127,235, 0.07);
+    font-size: 1.07rem;
+  }
+  .todo-list li button {
+    background: #ff5858;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 13px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .todo-list li button:hover {
+    background: #d57eeb;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Hello, here's my Intermediate Web Project</h1>
+  <div class="subtitle">In this project, me using advanced HTML, CSS, and JavaScript techniques—from form validation to creating a live To-Do List.</div>
+  <nav>
+    <a id="navContact" class="active">Contact Form</a>
+    <a id="navTodo">To-Do List</a>
+  </nav>
+</header>
+<div class="container">
+  <section class="section active" id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form" id="myForm" autocomplete="off">
+      <label for="username">Name</label>
+      <input type="text" id="username" name="username" placeholder="Enter your name" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
+
+      <div class="error" id="formError"></div>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+  <section class="section" id="todo">
+    <h2>My Dynamic To-Do List</h2>
+    <div class="todo-container">
+      <div class="todo-title">Add tasks to keep track:</div>
+      <form class="todo-form" id="todoForm">
+        <input type="text" id="todoInput" placeholder="Write your task here..." />
+        <button type="submit">Add</button>
+      </form>
+      <ul class="todo-list" id="todoList"></ul>
+    </div>
+  </section>
+</div>
+<script>
+  // Toggle navigation
+  const navContact = document.getElementById("navContact");
+  const navTodo = document.getElementById("navTodo");
+  const contactSection = document.getElementById("contact");
+  const todoSection = document.getElementById("todo");
+
+  navContact.addEventListener("click", () => {
+    navContact.classList.add("active");
+    navTodo.classList.remove("active");
+    contactSection.classList.add("active");
+    todoSection.classList.remove("active");
+  });
+
+  navTodo.addEventListener("click", () => {
+    navTodo.classList.add("active");
+    navContact.classList.remove("active");
+    todoSection.classList.add("active");
+    contactSection.classList.remove("active");
+  });
+
+  // Contact Form Validation
+  document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('username').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var message = document.getElementById('message').value.trim();
+    var error = '';
+    if(!name) error += 'Name is required.<br>';
+    if(!email) error += 'Email is required.<br>';
+    else if(!email.match(/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/)) error += 'Email format is not valid.<br>';
+    if(!message) error += 'Message is required.<br>';
+    var errorDiv = document.getElementById('formError');
+    if(error) {
+      errorDiv.innerHTML = error;
+    } else {
+      errorDiv.innerHTML = '';
+      alert('Thank you! Me received your message.');
+      document.getElementById('myForm').reset();
+    }
+  });
+
+  // Dynamic To-Do List
+  var todoForm = document.getElementById('todoForm');
+  var todoInput = document.getElementById('todoInput');
+  var todoList = document.getElementById('todoList');
+  todoForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var task = todoInput.value.trim();
+    if(task) {
+      var li = document.createElement('li');
+      li.textContent = task;
+      var btn = document.createElement('button');
+      btn.textContent = 'Remove';
+      btn.onclick = function() { li.remove(); };
+      li.appendChild(btn);
+      todoList.appendChild(li);
+      todoInput.value = '';
+    }
+  });
+</script>
+</body>
+</html>
