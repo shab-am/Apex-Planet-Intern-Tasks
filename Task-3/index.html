@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Web Project</title>
+    <link rel="stylesheet" href="/Task-3/styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>🌟 My Advanced Web Project 🌟</h1>
+        <p>Dive into interactive projects with responsive design and JavaScript magic!</p>
+    </header>
+
+    <nav class="menu">
+        <button data-section="quiz">📝 Quiz</button>
+        <button data-section="carousel">🎡 Carousel</button>
+        <button data-section="api">🌍 API Fun</button>
+    </nav>
+
+    <main>
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="card hidden">
+            <h2>📝 Interactive Quiz</h2>
+            <div id="quiz-container"></div>
+            <button id="submit-quiz">Submit Quiz</button>
+            <p id="quiz-result"></p>
+        </section>
+
+        <!-- CAROUSEL SECTION -->
+        <section id="carousel" class="card hidden">
+            <h2>🎡 Image Carousel</h2>
+            <div class="carousel">
+                <button class="carousel-btn" id="prev">⬅️</button>
+                <img id="carousel-image" src="https://picsum.photos/id/1015/600/350" alt="carousel image">
+                <button class="carousel-btn" id="next">➡️</button>
+            </div>
+        </section>
+
+        <!-- API FETCH SECTION -->
+        <section id="api" class="card hidden">
+            <h2>🌍 API Fun</h2>
+            <button id="fetch-joke">Get a Joke 😂</button>
+            <p id="joke-display"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Built with 💜 using HTML, CSS & JS</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
