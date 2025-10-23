@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — Filter & Sort</title>
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="card">
+      <h1>Product Catalog</h1>
+      <p class="muted">Filter by category, set a price range and sort by rating or price.</p>
+    </header>
+
+    <section class="controls card">
+      <div class="control-row">
+        <label>Category
+          <select id="category">
+            <option value="all">All</option>
+          </select>
+        </label>
+
+        <label>Max price
+          <input id="maxPrice" type="number" min="0" placeholder="No limit" />
+        </label>
+
+        <label>Sort by
+          <select id="sortBy">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price — Low to High</option>
+            <option value="price-desc">Price — High to Low</option>
+            <option value="rating-desc">Rating — High to Low</option>
+          </select>
+        </label>
+
+        <input id="searchProd" placeholder="Search products..." />
+      </div>
+    </section>
+
+    <section id="grid" class="grid card"></section>
+
+    <footer class="muted">Client-side demo. Data not persisted.</footer>
+  </main>
+
+  <script src="products.js"></script>
+</body>
+</html>

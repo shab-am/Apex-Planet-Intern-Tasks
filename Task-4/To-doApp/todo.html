@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do — LocalStorage App</title>
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="todo-header card">
+      <h1>My Notes & Tasks</h1>
+      <p class="muted">A simple, focused place to add tasks or quick notes. Data persists in your browser.</p>
+    </header>
+
+    <section class="card todo-panel">
+      <form id="addForm" class="add-form">
+        <input id="title" placeholder="Title or short task" required />
+        <textarea id="details" rows="2" placeholder="Details (optional)"></textarea>
+        <div class="form-row">
+          <select id="priority">
+            <option value="normal">Normal</option>
+            <option value="high">High priority</option>
+            <option value="low">Low priority</option>
+          </select>
+          <button class="btn" type="submit">Add</button>
+        </div>
+      </form>
+
+      <div class="controls">
+        <input id="search" placeholder="Search tasks..." />
+        <div class="filter-row">
+          <label><input type="checkbox" id="showDone" /> Show done</label>
+          <button id="clearAll" class="btn outline">Clear all</button>
+        </div>
+      </div>
+
+      <ul id="list" class="todo-list"></ul>
+    </section>
+
+    <footer class="muted">Data stored locally in your browser. No external servers.</footer>
+  </main>
+
+  <script src="todo.js"></script>
+</body>
+</html>

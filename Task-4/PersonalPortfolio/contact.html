@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shabnam M. | Contact</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Shabnam M.</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap main-content">
+  <section class="card">
+    <h2>Contact Me</h2>
+    <p class="timeline">Feel free to drop me a message. I will respond as soon as possible!</p>
+
+    <form id="contactForm" novalidate>
+      <label>Full Name
+        <input type="text" id="name" required placeholder="Your full name" />
+      </label>
+
+      <label>Email
+        <input type="email" id="email" required placeholder="Your email address" />
+      </label>
+
+      <label>Message
+        <textarea id="message" rows="5" required placeholder="Your message"></textarea>
+      </label>
+
+      <div class="form-footer">
+        <div id="formMsg" class="muted"></div>
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">© <span id="year"></span> Shabnam M. | <a href="index.html">Home</a> | <a href="projects.html">Projects</a></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
