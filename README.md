@@ -17,8 +17,3 @@ Built a professional multi-page project including portfolio, to-do/note-taking a
 - **Portfolio Website** – Showcased skills, education, and featured projects with responsive design.  
 🔗 [Live Demo](https://personal-portfolio-shabnam.vercel.app/)
 
-- **To-Do / Note-Taking App** – Implemented localStorage to persist user data.  
-🔗 [Live Demo](https://task-4-todo.vercel.app/)  
-
-- **Product Page** – Created interactive interfaces to filter and sort items by categories, price, and rating.  
-🔗 [Live Demo](https://task-4-productpage.vercel.app/)
